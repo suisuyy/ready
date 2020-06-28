@@ -1,0 +1,15 @@
+{
+    "name": "readys",
+    "description": "for ready epub reader",
+    "authors": "cyl",
+    "version": "1.0.0",
+    "main": "pathToMain",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "express": "4.17.1",
+        "formidable": "1.2.2",
+        "glob": "^7.1.6",
+        "mv": "^2.1.1",
+        "serve-index": "^1.9.1"
+    }
+}
