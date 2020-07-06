@@ -4,6 +4,7 @@ const mv = require('mv');
 const serveIndex = require('serve-index');
 const glob = require('glob');
 const cors = require('cors');
+const port=8051
 
 
 const app=express();
@@ -22,7 +23,7 @@ app.get('/getfnames',getFileNames);
 function handleUpload(req,res){
     let form=new formidable.IncomingForm();
     form.parse(req,(err,field,files)=>{
-        console.log(files.filetoupload.path);
+        console.log(files.filetoupload.name);
         let fpath=`${__dirname}/public/files/${files.filetoupload.name}`;
         console.log(`saving to ${fpath}`);
         mv(files.filetoupload.path,fpath,err=>{
@@ -50,4 +51,4 @@ function handleHome(req,res){
         return res.end();
 }
 
-app.listen(8080);
+app.listen(port);
